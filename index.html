@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Korgi Kode</title>
 
     <style>
@@ -10,99 +11,290 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background:
-                radial-gradient(circle at top left, #4f46e5 0%, transparent 35%),
-                radial-gradient(circle at bottom right, #0ea5e9 0%, transparent 35%),
-                linear-gradient(135deg, #0f172a, #111827);
-            color: white;
-            text-align: center;
-            padding: 24px;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                         "Segoe UI", sans-serif;
+            background: #f5f5f7;
+            color: #1d1d1f;
         }
 
-        .card {
-            max-width: 760px;
-            width: 100%;
-            padding: 64px 40px;
-            border-radius: 28px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+        header {
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(18px);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .badge {
-            display: inline-block;
-            padding: 8px 16px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.12);
-            font-size: 14px;
-            letter-spacing: 0.08em;
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 16px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-link {
+            color: #0071e3;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 90px 24px 70px;
+            background:
+                radial-gradient(circle at top left,
+                    rgba(79,70,229,.16), transparent 35%),
+                radial-gradient(circle at top right,
+                    rgba(14,165,233,.14), transparent 35%);
+        }
+
+        .studio-label {
             text-transform: uppercase;
-            margin-bottom: 24px;
+            letter-spacing: 2px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #6e6e73;
         }
 
         h1 {
-            margin: 0;
-            font-size: clamp(52px, 9vw, 92px);
+            margin: 12px 0 18px;
+            font-size: clamp(52px, 8vw, 88px);
+            letter-spacing: -4px;
             line-height: 1;
-            font-weight: 800;
-            letter-spacing: -0.04em;
         }
 
-        .tagline {
-            margin-top: 22px;
+        .hero p {
+            max-width: 650px;
+            margin: auto;
             font-size: 22px;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.45;
+            color: #6e6e73;
         }
 
-        .coming-soon {
-            margin-top: 34px;
+        .apps-section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 24px;
+        }
+
+        .section-label {
+            text-align: center;
+            color: #6e6e73;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 30px;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .app-card {
+            background: white;
+            border-radius: 30px;
+            padding: 38px;
+            box-shadow: 0 18px 50px rgba(0,0,0,.08);
+        }
+
+        .app-icon {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 34px;
+            box-shadow: 0 14px 30px rgba(0,0,0,.16);
+            margin-bottom: 26px;
+        }
+
+        .status {
+            display: inline-block;
+            background: #e8f7ed;
+            color: #16763b;
+            padding: 7px 13px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .app-card h2 {
+            font-size: 34px;
+            margin: 0 0 12px;
+            letter-spacing: -1px;
+        }
+
+        .app-card p {
             font-size: 18px;
+            line-height: 1.55;
+            color: #6e6e73;
+        }
+
+        .platform {
+            margin-top: 20px;
+            font-size: 15px;
             font-weight: 600;
         }
 
-        .dots {
-            margin-top: 24px;
-            font-size: 28px;
-            letter-spacing: 12px;
-            opacity: 0.75;
+        .coming {
+            text-align: center;
+            padding: 50px 24px 100px;
+        }
+
+        .coming h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .coming p {
+            color: #6e6e73;
+            font-size: 18px;
         }
 
         footer {
-            margin-top: 42px;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.55);
+            border-top: 1px solid rgba(0,0,0,.08);
+            padding: 30px 24px;
+            text-align: center;
+            color: #86868b;
+            font-size: 13px;
+        }
+
+        @media (max-width: 760px) {
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .app-card {
+                text-align: center;
+            }
+
+            .app-icon {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <main class="card">
-        <div class="badge">Independent App Studio</div>
 
-        <h1>Korgi Kode</h1>
+<header>
+    <nav>
+        <div class="brand">Korgi Kode</div>
+        <a class="nav-link" href="#apps">Apps</a>
+    </nav>
+</header>
 
-        <p class="tagline">
-            Thoughtful apps designed to make everyday tasks a little easier.
-        </p>
+<section class="hero">
+    <div class="studio-label">
+        Independent App Studio
+    </div>
 
-        <div class="coming-soon">
-            New site and app showcase coming soon.
+    <h1>Korgi Kode</h1>
+
+    <p>
+        Thoughtful apps designed to make everyday tasks
+        a little easier.
+    </p>
+</section>
+
+<section class="apps-section" id="apps">
+
+    <div class="section-label">
+        Our Apps
+    </div>
+
+    <div class="apps-grid">
+
+        <div class="app-card">
+
+            <img
+                class="app-icon"
+                src="images/claras-home-inventory.png"
+                alt="Clara's Home Inventory app icon"
+            >
+
+            <div class="status">
+                ✓ Approved for the App Store
+            </div>
+
+            <h2>Clara's Home Inventory</h2>
+
+            <p>
+                Organize your home, storage boxes, and belongings.
+                Track contents, add photos, generate QR codes,
+                and quickly find what you're looking for.
+            </p>
+
+            <div class="platform">
+                Designed for Mac
+            </div>
+
         </div>
 
-        <div class="dots">• • •</div>
+        <div class="app-card">
 
-        <footer>
-            korgikode.com
-        </footer>
-    </main>
+            <img
+                class="app-icon"
+                src="images/claras-fuel-log.png"
+                alt="Clara's Fuel Log app icon"
+            >
+
+            <div class="status">
+                Available on the App Store
+            </div>
+
+            <h2>Clara's Fuel Log</h2>
+
+            <p>
+                Track fuel fill-ups, mileage, fuel costs, MPG,
+                driving history, and useful statistics for your vehicle.
+            </p>
+
+            <div class="platform">
+                Designed for iPhone
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="coming">
+
+    <h2>More from Korgi Kode</h2>
+
+    <p>
+        More apps are on the way.
+    </p>
+
+</section>
+
+<footer>
+    © 2026 Korgi Kode &nbsp; • &nbsp; korgikode.com
+</footer>
+
 </body>
 </html>
