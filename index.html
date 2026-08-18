@@ -113,6 +113,20 @@
             border-radius: 30px;
             padding: 38px;
             box-shadow: 0 18px 50px rgba(0,0,0,.08);
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 60px rgba(0,0,0,.12);
+        }
+
+        .app-link {
+            color: inherit;
+            text-decoration: none;
+            display: block;
         }
 
         .app-icon {
@@ -227,7 +241,14 @@
 
     <div class="apps-grid">
 
-        <div class="app-card">
+        <!-- Clara's Home Inventory -->
+
+        <a
+            class="app-card app-link"
+            href="https://apps.apple.com/us/app/id6798009262"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
 
             <img
                 class="app-icon"
@@ -236,7 +257,7 @@
             >
 
             <div class="status">
-                ✓ Approved for the App Store
+                Available on the App Store
             </div>
 
             <h2>Clara's Home Inventory</h2>
@@ -251,9 +272,16 @@
                 Designed for Mac
             </div>
 
-        </div>
+        </a>
 
-        <div class="app-card">
+        <!-- Clara's Fuel Log -->
+
+        <a
+            class="app-card app-link"
+            href="https://apps.apple.com/us/app/id6744535684"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
 
             <img
                 class="app-icon"
@@ -276,31 +304,40 @@
                 Designed for iPhone
             </div>
 
-        </div>
-<div class="app-card">
+        </a>
 
-    <img
-        class="app-icon"
-        src="image/Speegie2.png"
-        alt="Speegie2 app icon"
-    >
+        <!-- Speegie2 -->
 
-    <div class="status">
-        Available on the App Store
-    </div>
+        <a
+            class="app-card app-link"
+            href="https://apps.apple.com/us/app/id6799488978"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
 
-    <h2>Speegie2</h2>
+            <img
+                class="app-icon"
+                src="image/Speegie2.png"
+                alt="Speegie2 app icon"
+            >
 
-    <p>
-        A simple and convenient Mac app designed
-        to make working with text and speech easier.
-    </p>
+            <div class="status">
+                Available on the App Store
+            </div>
 
-    <div class="platform">
-        Designed for Mac
-    </div>
+            <h2>Speegie2</h2>
 
-</div>
+            <p>
+                A simple and convenient Mac app designed
+                to make working with text and speech easier.
+            </p>
+
+            <div class="platform">
+                Designed for Mac
+            </div>
+
+        </a>
+
     </div>
 
 </section>
