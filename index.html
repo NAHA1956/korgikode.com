@@ -19,14 +19,47 @@
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
                          "Segoe UI", sans-serif;
-            background: #f5f5f7;
-            color: #1d1d1f;
+            color: #f5f5f7;
+            background:
+                linear-gradient(rgba(5, 12, 24, 0.96), rgba(8, 18, 34, 0.98)),
+                radial-gradient(circle at 20% 10%, rgba(255, 153, 51, 0.16), transparent 30%),
+                radial-gradient(circle at 85% 16%, rgba(0, 113, 227, 0.18), transparent 28%);
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 50% 5%, rgba(255, 176, 73, 0.12), transparent 26%),
+                linear-gradient(to bottom, transparent 0%, rgba(2, 8, 18, 0.28) 68%, rgba(2, 8, 18, 0.72) 100%);
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 34vh;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.38;
+            background:
+                linear-gradient(145deg, transparent 0 12%, rgba(31, 54, 78, .7) 12% 16%, transparent 16% 25%),
+                linear-gradient(35deg, transparent 0 24%, rgba(19, 37, 57, .95) 24% 32%, transparent 32% 45%),
+                linear-gradient(155deg, transparent 0 42%, rgba(12, 27, 45, .95) 42% 50%, transparent 50% 100%);
+            filter: blur(1px);
         }
 
         header {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(7, 15, 29, 0.72);
             backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(0,0,0,0.08);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -47,56 +80,100 @@
             letter-spacing: -0.5px;
         }
 
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
         .nav-link {
-            color: #0071e3;
+            color: #9cc8ff;
             text-decoration: none;
             font-size: 15px;
         }
 
+        .nav-link:hover {
+            color: white;
+        }
+
         .hero {
+            position: relative;
+            overflow: hidden;
             text-align: center;
-            padding: 90px 24px 70px;
+            padding: 120px 24px 100px;
             background:
-                radial-gradient(circle at top left,
-                    rgba(79,70,229,.16), transparent 35%),
-                radial-gradient(circle at top right,
-                    rgba(14,165,233,.14), transparent 35%);
+                radial-gradient(circle at 50% 82%, rgba(255, 151, 45, .22), transparent 18%),
+                radial-gradient(circle at 50% 28%, rgba(59, 130, 246, .13), transparent 38%),
+                linear-gradient(to bottom, rgba(4, 10, 22, .15), rgba(4, 10, 22, .35));
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(50px);
+            pointer-events: none;
+        }
+
+        .hero::before {
+            width: 420px;
+            height: 420px;
+            left: -120px;
+            top: -120px;
+            background: rgba(255, 145, 40, 0.14);
+        }
+
+        .hero::after {
+            width: 500px;
+            height: 500px;
+            right: -170px;
+            top: -100px;
+            background: rgba(0, 113, 227, 0.16);
         }
 
         .studio-label {
             text-transform: uppercase;
             letter-spacing: 2px;
             font-size: 13px;
-            font-weight: 600;
-            color: #6e6e73;
+            font-weight: 700;
+            color: #f3aa58;
         }
 
         h1 {
             margin: 12px 0 18px;
-            font-size: clamp(52px, 8vw, 88px);
+            font-size: clamp(54px, 8vw, 92px);
             letter-spacing: -4px;
             line-height: 1;
+            text-shadow: 0 10px 40px rgba(0,0,0,.35);
         }
 
         .hero p {
-            max-width: 650px;
+            max-width: 700px;
             margin: auto;
             font-size: 22px;
-            line-height: 1.45;
-            color: #6e6e73;
+            line-height: 1.5;
+            color: #c7ced8;
+        }
+
+        .hero-tagline {
+            margin-top: 24px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #91bff3;
         }
 
         .apps-section {
             max-width: 1100px;
             margin: auto;
-            padding: 80px 24px;
+            padding: 80px 24px 90px;
         }
 
         .section-label {
             text-align: center;
-            color: #6e6e73;
+            color: #8fbfff;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin-bottom: 30px;
@@ -109,18 +186,24 @@
         }
 
         .app-card {
-            background: white;
+            background:
+                linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.055));
+            border: 1px solid rgba(255,255,255,.10);
             border-radius: 30px;
             padding: 38px;
-            box-shadow: 0 18px 50px rgba(0,0,0,.08);
+            box-shadow: 0 24px 70px rgba(0,0,0,.24);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             transition:
                 transform 0.2s ease,
-                box-shadow 0.2s ease;
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
         }
 
         .app-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 22px 60px rgba(0,0,0,.12);
+            transform: translateY(-5px);
+            box-shadow: 0 28px 80px rgba(0,0,0,.34);
+            border-color: rgba(255,176,73,.32);
         }
 
         .app-store-link {
@@ -134,18 +217,19 @@
             height: 150px;
             object-fit: cover;
             border-radius: 34px;
-            box-shadow: 0 14px 30px rgba(0,0,0,.16);
+            box-shadow: 0 16px 36px rgba(0,0,0,.36);
             margin-bottom: 26px;
         }
 
         .status {
             display: inline-block;
-            background: #e8f7ed;
-            color: #16763b;
+            background: rgba(36, 183, 91, .16);
+            color: #7fe59f;
+            border: 1px solid rgba(127, 229, 159, .18);
             padding: 7px 13px;
             border-radius: 999px;
             font-size: 13px;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 14px;
         }
 
@@ -158,65 +242,79 @@
         .app-card p {
             font-size: 18px;
             line-height: 1.55;
-            color: #6e6e73;
+            color: #bcc5d0;
         }
 
         .platform {
             margin-top: 20px;
             font-size: 15px;
-            font-weight: 600;
+            font-weight: 700;
+            color: #f2b15f;
         }
 
         .app-links {
             margin-top: 26px;
             padding-top: 18px;
-            border-top: 1px solid rgba(0,0,0,.08);
+            border-top: 1px solid rgba(255,255,255,.10);
             display: flex;
             flex-wrap: wrap;
-            gap: 8px 12px;
+            gap: 10px 14px;
             font-size: 14px;
         }
 
         .app-links a {
-            color: #0071e3;
+            color: #8cc2ff;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 650;
         }
 
         .app-links a:hover {
+            color: white;
             text-decoration: underline;
         }
 
         .coming {
             text-align: center;
-            padding: 50px 24px 100px;
+            padding: 30px 24px 100px;
+        }
+
+        .coming-inner {
+            max-width: 850px;
+            margin: auto;
+            padding: 42px 30px;
+            border-radius: 28px;
+            background: rgba(255,255,255,.055);
+            border: 1px solid rgba(255,255,255,.09);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
         }
 
         .coming h2 {
             font-size: 34px;
-            margin-bottom: 10px;
+            margin: 0 0 10px;
         }
 
         .coming p {
-            color: #6e6e73;
+            color: #b8c1cc;
             font-size: 18px;
         }
 
         #contact {
-            margin-top: 50px;
+            margin-top: 44px;
         }
 
         #contact a {
-            color: #0071e3;
+            color: #8cc2ff;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         footer {
-            border-top: 1px solid rgba(0,0,0,.08);
+            border-top: 1px solid rgba(255,255,255,.08);
+            background: rgba(2, 8, 18, .6);
             padding: 30px 24px;
             text-align: center;
-            color: #86868b;
+            color: #8f99a6;
             font-size: 13px;
         }
 
@@ -238,8 +336,16 @@
                 justify-content: center;
             }
 
+            .hero {
+                padding-top: 90px;
+            }
+
             h1 {
                 letter-spacing: -2px;
+            }
+
+            .nav-links {
+                gap: 12px;
             }
         }
     </style>
@@ -250,7 +356,10 @@
 <header>
     <nav>
         <div class="brand">Korgi Kode</div>
-        <a class="nav-link" href="#apps">Apps</a>
+        <div class="nav-links">
+            <a class="nav-link" href="#apps">Apps</a>
+            <a class="nav-link" href="#contact">Contact</a>
+        </div>
     </nav>
 </header>
 
@@ -265,6 +374,10 @@
         Thoughtful apps designed to make everyday tasks
         a little easier.
     </p>
+
+    <div class="hero-tagline">
+        Built for Apple platforms • Simple by design • Privacy minded
+    </div>
 </section>
 
 <section class="apps-section" id="apps">
@@ -396,25 +509,27 @@
 
 <section class="coming">
 
-    <h2>More from Korgi Kode</h2>
-
-    <p>
-        More apps are on the way.
-    </p>
-
-    <section id="contact">
-        <h2>Contact Korgi Kode</h2>
+    <div class="coming-inner">
+        <h2>More from Korgi Kode</h2>
 
         <p>
-            Questions, support requests, and privacy inquiries:
+            More apps are on the way.
         </p>
 
-        <p>
-            <a href="mailto:korgi.kode@yahoo.com">
-                korgi.kode@yahoo.com
-            </a>
-        </p>
-    </section>
+        <section id="contact">
+            <h2>Contact Korgi Kode</h2>
+
+            <p>
+                Questions, support requests, and privacy inquiries:
+            </p>
+
+            <p>
+                <a href="mailto:korgi.kode@yahoo.com">
+                    korgi.kode@yahoo.com
+                </a>
+            </p>
+        </section>
+    </div>
 
 </section>
 
