@@ -233,6 +233,22 @@
             margin-bottom: 14px;
         }
 
+        .status.pending {
+            background: rgba(255, 176, 73, .14);
+            color: #ffc67c;
+            border-color: rgba(255, 198, 124, .22);
+        }
+
+        .app-icon.wordmark {
+            display: grid;
+            place-items: center;
+            background: linear-gradient(145deg, #ed8a25, #0878d1 70%, #092b50);
+            color: white;
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
         .app-card h2 {
             font-size: 34px;
             margin: 0 0 12px;
@@ -299,6 +315,37 @@
             font-size: 18px;
         }
 
+        .about {
+            max-width: 850px;
+            margin: 0 auto 80px;
+            padding: 0 24px;
+        }
+
+        .about-inner {
+            padding: 44px;
+            border-radius: 28px;
+            background: linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.045));
+            border: 1px solid rgba(255,255,255,.10);
+            box-shadow: 0 24px 70px rgba(0,0,0,.20);
+        }
+
+        .about h2 {
+            margin: 0 0 16px;
+            font-size: 36px;
+            letter-spacing: -1px;
+        }
+
+        .about p {
+            margin: 0 0 16px;
+            color: #bcc5d0;
+            font-size: 18px;
+            line-height: 1.65;
+        }
+
+        .about p:last-child {
+            margin-bottom: 0;
+        }
+
         #contact {
             margin-top: 44px;
         }
@@ -347,6 +394,10 @@
             .nav-links {
                 gap: 12px;
             }
+
+            .about-inner {
+                padding: 30px 24px;
+            }
         }
     </style>
 </head>
@@ -358,6 +409,7 @@
         <div class="brand">Korgi Kode</div>
         <div class="nav-links">
             <a class="nav-link" href="#apps">Apps</a>
+            <a class="nav-link" href="#about">About</a>
             <a class="nav-link" href="#contact">Contact</a>
         </div>
     </nav>
@@ -387,6 +439,77 @@
     </div>
 
     <div class="apps-grid">
+
+        <!-- KorgiConvoy -->
+
+        <article class="app-card">
+            <a
+                class="app-store-link"
+                href="https://apps.apple.com/us/app/id6807865986"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div
+                    class="app-icon wordmark"
+                    role="img"
+                    aria-label="KorgiConvoy"
+                >KC</div>
+
+                <div class="status">
+                    Available on the App Store
+                </div>
+
+                <h2>KorgiConvoy</h2>
+
+                <p>
+                    Build a traveling Apple Music playlist for your convoy.
+                    A lead vehicle controls playback while passengers and
+                    friends join, follow along, and request songs.
+                </p>
+
+                <div class="platform">
+                    Designed for iPhone, iPad, and CarPlay
+                </div>
+            </a>
+
+            <div class="app-links">
+                <a href="KorgiConvoy/PrivacyPolicy.html">Privacy Policy</a>
+                <a href="KorgiConvoy/UserPrivacyPolicy.html">User Privacy</a>
+                <a href="KorgiConvoy/Support.html">Support</a>
+            </div>
+        </article>
+
+        <!-- Clara's EV Charging Log -->
+
+        <article class="app-card">
+            <img
+                class="app-icon"
+                src="image/claras-ev-charging-log.png"
+                alt="Clara's EV Charging Log app icon"
+            >
+
+            <div class="status pending">
+                Submitted to App Review
+            </div>
+
+            <h2>Clara's EV Charging Log</h2>
+
+            <p>
+                Record home and public charging sessions, track energy and
+                cost, estimate home charging from battery percentage, and
+                review your charging history from iPhone or CarPlay.
+            </p>
+
+            <div class="platform">
+                Designed for iPhone and CarPlay
+            </div>
+
+            <div class="app-links">
+                <a href="ClarasEVChargingLog/PrivacyPolicy.html">Privacy Policy</a>
+                <a href="ClarasEVChargingLog/UserPrivacyPolicy.html">User Privacy</a>
+                <a href="ClarasEVChargingLog/Support.html">Support</a>
+            </div>
+        </article>
 
         <!-- Clara's Home Inventory -->
 
@@ -544,6 +667,24 @@
 
     </div>
 
+</section>
+
+<section class="about" id="about">
+    <div class="about-inner">
+        <div class="section-label">About Us</div>
+        <h2>Useful software with a little corgi spirit.</h2>
+        <p>
+            Korgi Kode is an independent app studio creating practical tools
+            for Apple platforms. Our apps begin with everyday problems: finding
+            what was packed away, tracking a vehicle, preparing App Store
+            screenshots, or keeping music moving on a road trip.
+        </p>
+        <p>
+            Clara, our corgi inspiration, gives the studio its personality.
+            Each app is built to stay approachable, respect the user’s privacy,
+            and do its job without unnecessary complexity.
+        </p>
+    </div>
 </section>
 
 <section class="coming">
