@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://korgikode.com/sitemap.xml
