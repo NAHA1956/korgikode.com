@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Download Korgi Dreams, a free animated corgi screen saver for Mac from Korgi Kode.">
+    <title>Korgi Dreams — Free Mac Screen Saver</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+            color: #f5f5f7;
+            background:
+                radial-gradient(circle at 18% 12%, rgba(255, 153, 51, .17), transparent 28%),
+                radial-gradient(circle at 84% 15%, rgba(0, 113, 227, .21), transparent 31%),
+                linear-gradient(180deg, #050c18 0%, #081222 65%, #020812 100%);
+        }
+        header {
+            border-bottom: 1px solid rgba(255,255,255,.08);
+            background: rgba(7, 15, 29, .72);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+        nav {
+            width: min(1100px, calc(100% - 48px));
+            margin: auto;
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+        .brand {
+            color: white;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 750;
+            letter-spacing: -.5px;
+        }
+        .back { color: #9cc8ff; text-decoration: none; font-size: 15px; }
+        .back:hover { color: white; }
+        main {
+            width: min(1000px, calc(100% - 40px));
+            margin: auto;
+            padding: 78px 0 90px;
+        }
+        .hero {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 58px;
+            align-items: center;
+            padding: 48px;
+            border: 1px solid rgba(255,255,255,.11);
+            border-radius: 34px;
+            background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+            box-shadow: 0 30px 90px rgba(0,0,0,.32);
+        }
+        .icon {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 55px;
+            box-shadow: 0 24px 55px rgba(0,0,0,.42);
+        }
+        .eyebrow {
+            color: #f3aa58;
+            text-transform: uppercase;
+            letter-spacing: 1.7px;
+            font-size: 13px;
+            font-weight: 800;
+        }
+        h1 {
+            margin: 10px 0 16px;
+            font-size: clamp(48px, 7vw, 76px);
+            line-height: .98;
+            letter-spacing: -3px;
+        }
+        .intro {
+            margin: 0 0 28px;
+            color: #c4ccd7;
+            font-size: 20px;
+            line-height: 1.55;
+        }
+        .download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 52px;
+            padding: 0 24px;
+            border-radius: 14px;
+            color: #07101e;
+            background: #f3aa58;
+            text-decoration: none;
+            font-weight: 800;
+            box-shadow: 0 12px 30px rgba(243, 170, 88, .22);
+            transition: transform .18s ease, background .18s ease;
+        }
+        .download:hover { background: #ffc57e; transform: translateY(-2px); }
+        .meta { margin: 14px 0 0; color: #94a0af; font-size: 14px; }
+        .details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 26px;
+            margin-top: 28px;
+        }
+        .panel {
+            padding: 34px;
+            border-radius: 26px;
+            border: 1px solid rgba(255,255,255,.09);
+            background: rgba(255,255,255,.055);
+        }
+        h2 { margin: 0 0 16px; font-size: 28px; letter-spacing: -.7px; }
+        .panel p, .panel li { color: #bac4d0; font-size: 16px; line-height: 1.6; }
+        ol { margin: 0; padding-left: 22px; }
+        li + li { margin-top: 8px; }
+        .small { margin: 24px 0 0; text-align: center; color: #8f99a6; font-size: 13px; }
+        .small code { overflow-wrap: anywhere; color: #aeb8c5; }
+        footer {
+            border-top: 1px solid rgba(255,255,255,.08);
+            padding: 30px 24px;
+            text-align: center;
+            color: #8f99a6;
+            font-size: 13px;
+        }
+        @media (max-width: 760px) {
+            main { padding-top: 40px; }
+            .hero { grid-template-columns: 1fr; padding: 30px 24px; gap: 30px; text-align: center; }
+            .icon { width: min(220px, 72%); margin: auto; }
+            .details { grid-template-columns: 1fr; }
+            .panel { padding: 28px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="brand" href="index.html">Korgi Kode</a>
+            <a class="back" href="index.html#apps">All Apps</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img class="icon" src="image/korgi-dreams.png" alt="Korgi Dreams icon featuring Clara beneath a moonlit sky">
+            <div>
+                <div class="eyebrow">Free Mac Screen Saver</div>
+                <h1>Korgi Dreams</h1>
+                <p class="intro">
+                    A peaceful moonlit world where Clara and her corgi friends
+                    wander across your screen while your Mac rests.
+                </p>
+                <a class="download" href="Downloads/KorgiDreams-1.0.pkg" download>
+                    Download Korgi Dreams 1.0
+                </a>
+                <p class="meta">Free • Notarized installer • macOS 13 or later • 3 MB</p>
+            </div>
+        </section>
+
+        <section class="details">
+            <div class="panel">
+                <h2>Install</h2>
+                <ol>
+                    <li>Download and open <strong>KorgiDreams-1.0.pkg</strong>.</li>
+                    <li>Follow the installer’s prompts.</li>
+                    <li>Open <strong>System Settings → Screen Saver</strong>.</li>
+                    <li>Select <strong>Korgi Dreams</strong> and enjoy.</li>
+                </ol>
+            </div>
+
+            <div class="panel">
+                <h2>A little corgi calm</h2>
+                <p>
+                    Korgi Dreams brings animated corgis, a glowing moon, and a
+                    cozy nighttime landscape to your Mac. It is a small gift
+                    from Korgi Kode—no account, purchase, or subscription needed.
+                </p>
+            </div>
+        </section>
+
+        <p class="small">
+            SHA-256: <code>b64200d2928a2cedc36af01a0cb032c35aa759e32843817860aa812962977037</code>
+        </p>
+    </main>
+
+    <footer>
+        © 2026 Korgi Kode &nbsp; • &nbsp; <a class="back" href="mailto:korgi.kode@yahoo.com">Support</a>
+    </footer>
+</body>
+</html>
