@@ -411,6 +411,11 @@
             <a class="nav-link" href="#apps">Apps</a>
             <a class="nav-link" href="#about">About</a>
             <a class="nav-link" href="#contact">Contact</a>
+            .download-count {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #8f99a6;
+}
         </div>
     </nav>
 </header>
@@ -463,9 +468,13 @@
             </a>
 
             <div class="app-links">
-                <a href="korgi-dreams.html">Learn More</a>
-                <a href="Downloads/KorgiDreams-1.0.pkg" download>Download Free</a>
-            </div>
+    <a href="korgi-dreams.html">Learn More</a>
+    <a href="https://korgi-download-counter.4vryt6fbd7.workers.dev/download/dreams">Download Free</a>
+</div>
+
+<div class="download-count">
+    <span id="dreams-count">Downloads: 0</span>
+</div>
         </article>
 
         <!-----Korgi BootClock---->
@@ -489,10 +498,14 @@
                 <div class="platform">Menu-bar utility for Mac</div>
             </a>
 
-            <div class="app-links">
-                <a href="korgi-bootclock.html">Learn More</a>
-                <a href="Downloads/KorgiBootClock-1.0.zip" download>Download Free</a>
-            </div>
+           <div class="app-links">
+    <a href="korgi-bootclock.html">Learn More</a>
+    <a href="https://korgi-download-counter.4vryt6fbd7.workers.dev/download/bootclock">Download Free</a>
+</div>
+
+<div class="download-count">
+    <span id="bootclock-count">Downloads: 0</span>
+</div>
         </article>
 
         <!-- KorgiConvoy -->
@@ -817,6 +830,22 @@
 <footer>
     © 2026 Korgi Kode &nbsp; • &nbsp; korgikode.com
 </footer>
+<script>
+    const counterURL =
+        "https://korgi-download-counter.4vryt6fbd7.workers.dev/counts";
 
+    fetch(counterURL)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("dreams-count").textContent =
+                `Downloads: ${data.dreams}`;
+
+            document.getElementById("bootclock-count").textContent =
+                `Downloads: ${data.bootclock}`;
+        })
+        .catch(error => {
+            console.error("Unable to load download counts:", error);
+        });
+</script>
 </body>
 </html>
